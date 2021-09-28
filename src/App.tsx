@@ -4,6 +4,8 @@ import { reorderColors } from "./reorder";
 import { ColorMap } from "./types";
 import { AuthorList } from "./AuthorList";
 
+
+// ref: https://learncoding.map4b.com/2019/04/react-drag-and-drop-multiple-horizontal-lists/
 const App = () => {
   const [colorMap, setColors] = React.useState<ColorMap>({
     a: ["blue", "red", "yellow"],
@@ -23,6 +25,7 @@ const App = () => {
       }}
     >
       <div>
+        {JSON.stringify(colorMap)}
         {Object.entries(colorMap).map(([k, v]) => (
           <AuthorList
             internalScroll

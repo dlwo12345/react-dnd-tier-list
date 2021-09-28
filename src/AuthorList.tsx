@@ -21,7 +21,7 @@ export const AuthorList: React.FC<Props> = ({ listId, listType, colors }) => {
         <div {...dropProvided.droppableProps}>
           <div>
             <div>
-              <div style={{ display: "flex" }} ref={dropProvided.innerRef}>
+              <div style={{ display: "flex", border: '1px solid #aaa', minHeight: '20px' }} ref={dropProvided.innerRef}>
                 {colors.map((color, index) => (
                   <Draggable key={color} draggableId={color} index={index}>
                     {dragProvided => (
