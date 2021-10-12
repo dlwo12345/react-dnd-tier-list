@@ -15,7 +15,10 @@ const App = () => {
 
   return (
     <DragDropContext
-      onDragEnd={({ destination, source }) => {
+      onDragEnd={({ 
+        destination, // Draggable이 끝난 위치(location). 만약에 Draggable이 시작한 위치와 같은 위치로 돌아오면 이 destination값은 null이 될것입니다.
+        source // Draggable 이 시작된 위치(location).
+       }) => {
         // // dropped outside the list
         if (!destination) {
           return;
@@ -30,8 +33,8 @@ const App = () => {
           <AuthorList
             internalScroll
             key={k}
-            listId={k}
-            listType="CARD"
+            listId={k} // Droppable droppableId로 쓰임
+            listType="CARD" // Droppable type으로 쓰임
             colors={v}
           />
         ))}
